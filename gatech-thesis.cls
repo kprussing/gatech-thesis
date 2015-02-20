@@ -4,7 +4,7 @@
 %% Copyright (c) 2002 by Charles S. Wilson. All rights reserved.
 %% See licensing information, below.
 %%
-%% Last Update: V1.9 (20 Februaru 2015) Keith F. Prussing
+%% Last Update: V1.9 (20 February 2015) Keith F. Prussing
 %%
 %% Heritage:
 %%   UT-THESIS.CLS (v1.8) 
