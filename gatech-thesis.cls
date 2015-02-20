@@ -53,6 +53,11 @@
 %%
 %%  REVISION HISTORY:
 %%
+%%  v1.9: 2015-Feb-20 Keith F. Prussing
+%%      * Remove loading the `gatech-thesis-patch.sty` file.  This fixes
+%%        an extra warning that is annoying.  The file does not appear 
+%%        to do anything anyway.  The alternative to this is to update
+%%        the version number in `gatech-thesis-patch.sty`.
 %%  v1.8: 2010-Jul-02 Mitchel T. Keller
 %%      * Change font used in Table of Contents for volumes (parts).
 %%      * Add support for abstract page meeting UMI requirements.
@@ -3140,7 +3145,6 @@ openright,doublespaced,normalmargins,final}
 %% for and fix such page breaks)
 %
 \brokenpenalty=10000
-\InputIfFileExists{gatech-thesis-patch.sty}{}{}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%  End of GATECH-THESIS.CLS
