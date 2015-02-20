@@ -62,6 +62,7 @@
 %%      * Do not force the page style to plain when renewing the chapter
 %%        macro because it forces the preliminary pages to have numbers,
 %%        but some are not supposed to have numbers.
+%%      * Remove the dedication and preface from the table of contents.
 %%  v1.8: 2010-Jul-02 Mitchel T. Keller
 %%      * Change font used in Table of Contents for volumes (parts).
 %%      * Add support for abstract page meeting UMI requirements.
@@ -1581,8 +1582,6 @@ openright,doublespaced,normalmargins,final}
   \typeout{*****************    Dedication    ******************}
   \if@openright\cleardoublepage\else\clearpage\fi 
   \phantomsection%
-  \addcontentsline{toc}{chapter}%
-    {\texorpdfstring{\Makeuppercase{Dedication}}{Dedication}}
   \ifdedicationheading
     \chapter*{\MakeUppercase{Dedication}}
   \else
@@ -1614,8 +1613,6 @@ openright,doublespaced,normalmargins,final}
   \typeout{*****************      Preface     ******************}
   \if@openright\cleardoublepage\else\clearpage\fi 
   \phantomsection%
-  \addcontentsline{toc}{chapter}%
-    {\texorpdfstring{\Makeuppercase{Preface}}{Preface}}
   \chapter*{\MakeUppercase{Preface}}
   \vskip 0.5in
   \begingroup
