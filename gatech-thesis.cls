@@ -67,6 +67,13 @@
 %%        Chapter 10 of the April 2014 thesis manual.  The package now
 %%        requires the `caption` and `setspace` packages to be
 %%        installed.
+%%      * Fix the page numbering in the preliminary sections.  Per the
+%%        April 2014 thesis manual, the numbering in Roman numerals
+%%        begins on the Acknowledgements page and continues to chapter
+%%        1.  There was also a subtle issue when the `twoside` option
+%%        was used in that Roman numerals were placed on the back of the
+%%        title page, signature page, and the dedication.  This is
+%%        fixed.
 %%  v1.8: 2010-Jul-02 Mitchel T. Keller
 %%      * Change font used in Table of Contents for volumes (parts).
 %%      * Add support for abstract page meeting UMI requirements.
@@ -1559,7 +1566,7 @@ openright,doublespaced,normalmargins,final}
     %% increase it to 2; otherwise, leave it as is.
     \ifdim \baselinestretch pt < 1.25pt \newlinestretch{1.25}\else%
     \ifdim \baselinestretch pt < 1.66pt \newlinestretch{1.66}\fi\fi%
-}{\par\endgroup}%abstract
+}{\par\endgroup\clearpage\thispagestyle{empty}}%abstract
 %
 %% \begin{summary}...\end{summary} formats a 
 %% summary section (identical to an abstract section,
@@ -1589,7 +1596,9 @@ openright,doublespaced,normalmargins,final}
 \newcommand{\dedicationbottom}{\bigskip\bigskip\vspace*{\stretch{1}}}
 \newenvironment{dedication}{%
   \typeout{*****************    Dedication    ******************}
+  \thispagestyle{empty}
   \if@openright\cleardoublepage\else\clearpage\fi 
+  \thispagestyle{empty}
   \phantomsection%
   \ifdedicationheading
     \chapter*{\MakeUppercase{Dedication}}
@@ -1599,7 +1608,10 @@ openright,doublespaced,normalmargins,final}
   \vskip 0.5in
   \begingroup
   \begin{itshape}\dedicationtop
-}{\dedicationbottom\end{itshape}\par\endgroup}%dedication
+}{
+  \dedicationbottom\end{itshape}\par\endgroup
+  \clearpage\thispagestyle{empty}
+}%dedication
 %
 %% \begin{acknowledgements}...\end{acknowledgements} formats an
 %% acknowledgements section
@@ -1753,6 +1765,7 @@ openright,doublespaced,normalmargins,final}
   \fi
 }
 \newcommand{\makesignature}{%
+  \thispagestyle{empty}
   \if@openright\cleardoublepage\else\clearpage\fi 
   \phantomsection%
   \pdfbookmark[0]{Signatures}{signatures}%
@@ -1820,7 +1833,7 @@ openright,doublespaced,normalmargins,final}
       \mbox{}
     \fi
   \end{center}
-  \thispagestyle{empty}
+  \thispagestyle{empty}\clearpage\thispagestyle{empty}
 }
 %
 %% beforepreface
