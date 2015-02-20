@@ -4,7 +4,7 @@
 %% Copyright (c) 2002 by Charles S. Wilson. All rights reserved.
 %% See licensing information, below.
 %%
-%% Last Update: V1.8 (2 July 2010) by Mitchel T. Keller
+%% Last Update: V1.9 (20 Februaru 2015) Keith F. Prussing
 %%
 %% Heritage:
 %%   UT-THESIS.CLS (v1.8) 
@@ -22,8 +22,9 @@
 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\gtthesisversion}{1.8}% current version number
-\newcommand{\gtthesisupdated}{2010/07/02}% date of last change(s)
+\newcommand{\gtthesisversion}{1.9}% current version number
+\newcommand{\gtthesisupdated}{2014/02/20}% date of last change(s)
+\newcommand{\gtthesiseditor}{Keith F. Prussing}% The last person to edit
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%
@@ -759,7 +760,7 @@
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{gatech-thesis}
-        [\gtthesisupdated\space\gtthesisversion\space(Mitchel T. Keller)]%
+        [\gtthesisupdated\space\gtthesisversion\space(\gtthesiseditor)]%
 \RequirePackage{calc}% part of LaTeX tools bundle   
 %\RequirePackage{lastpage}
 
