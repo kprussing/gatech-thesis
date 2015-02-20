@@ -1415,9 +1415,10 @@ FUNCTION {format.names}
   s num.names$ 'numnames :=
   numnames 'namesleft :=
     { namesleft #0 > }
+    % Small caps.  KFP 2015-02-19
     { s nameptr
       name.format.string
-      format.name$
+      format.name$ scapify
       bibinfo bibinfo.check
       't :=
       nameptr #1 >
