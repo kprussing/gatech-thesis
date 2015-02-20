@@ -194,16 +194,18 @@ FUNCTION {is.print.banners.to.terminal} { #1 }
 %% FILE VERSION AND BANNER %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-FUNCTION{bst.file.version} { "1.13" }
-FUNCTION{bst.file.date} { "2008/09/30" }
-FUNCTION{bst.file.website} { "http://www.michaelshell.org/tex/ieeetran/bibtex/" }
+FUNCTION{bst.file.version} { "1.0" }
+FUNCTION{bst.file.date} { "2015-02-19" }
+FUNCTION{bst.file.website} { "http://github.com/kprussing/gatech-thesis" }
 
 FUNCTION {banner.message}
 { is.print.banners.to.terminal
-     { "-- IEEEtran.bst version" " " * bst.file.version *
-       " (" * bst.file.date * ") " * "by Michael Shell." *
+     { "-- gatech-thesis.bst version" " " * bst.file.version *
+       " (" * bst.file.date * ") " * "by Keith F. Prussing" *
        top$
        "-- " bst.file.website *
+       top$
+       "-- Adapted from IEEEtran.bst"
        top$
        "-- See the " quote$ * "IEEEtran_bst_HOWTO.pdf" * quote$ * " manual for usage information." *
        top$
@@ -1102,7 +1104,7 @@ FUNCTION {begin.bib}
   write$ newline$
   "\expandafter\ifx\csname l@#1\endcsname\relax"
   write$ newline$
-  "\typeout{** WARNING: IEEEtran.bst: No hyphenation pattern has been}%"
+  "\typeout{** WARNING: gatech-thesis.bst: No hyphenation pattern has been}%"
   write$ newline$
   "\typeout{** loaded for the language `#1'. Using the pattern for}%"
   write$ newline$
