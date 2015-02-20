@@ -1,3 +1,39 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Georgia Tech thesis bibliography style
+%
+% This is the IEEE Transactions bibliography style file as described in
+% the previous version (08-Aug-2002) with the URL information added.
+% This differs from the original IEEEtran.bst by sorting the entries,
+% small caps are used for author and editor names, and the URLs now add
+% the date visited.
+%
+% 0.0 2015-02-18 Keith F. Prussing
+%  1. Initial copy of the IEEEtrans.bst from the MacPorts package.
+%
+% 1.0 2015-02-19 (Initial Release) Keith F. Prussing
+%  1. Added the sorting functionality from the (08-Aug-2002) version of
+%     gatech-thesis.bst by simply copying the appropriate functions.
+%  2. Changed the author name string to be surname first.
+%  3. Added the function to convert the author names to small caps.
+%  4. Added function to add an accessed date.  This will search an entry
+%     for the field `urldate` and will place it at the end of the
+%     reference.  This conforms to the requirement for websites in
+%     Chapter 9 of the April 2014 thesis manual from OGS.  It is also
+%     useful for software that has a main website as contact.  
+%
+% KNOWN BUGS:
+%  1. This style requires either the url or hyperref package to be used
+%     if URLs are present in the bibliography.  If one is not used, then
+%     the special characters like `_' and `&' will not be handled well.
+%     There should be a way to work around this by creating a dummy
+%     `\usl' macro to simply escape the special characters.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%*************************************************************************
+%% Begin the header from IEEEtran.bst
+%%*************************************************************************
 %%
 %% IEEEtran.bst
 %% BibTeX Bibliography Style file for IEEE Journals and Conferences (unsorted)
@@ -116,7 +152,9 @@
 % \bstctlcite{IEEEexample:BSTcontrol}
 %
 % IEEEtran.cls V1.6 and later does provide this command.
-
+%%*************************************************************************
+%% End the header from IEEEtran.bst
+%%*************************************************************************
 
 
 % #0 turns off the display of the number for articles.
