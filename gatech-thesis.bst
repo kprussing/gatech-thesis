@@ -168,7 +168,8 @@ FUNCTION {default.is.dash.repeated.names} { #1 }
 
 
 % The default name format control string.
-FUNCTION {default.name.format.string}{ "{f.~}{vv~}{ll}{, jj}" }
+% Surname first.  KFP 2015-02-19
+FUNCTION {default.name.format.string}{ "{vv~}{ll}{, jj}{, f.}" }
 
 
 % The default LaTeX font command for the names.
