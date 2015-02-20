@@ -54,6 +54,7 @@
 %%  REVISION HISTORY:
 %%
 %%  v1.9: 2015-Feb-20 Keith F. Prussing
+%%      * Update format of copyright line to current standard.
 %%      * Remove loading the `gatech-thesis-patch.sty` file.  This fixes
 %%        an extra warning that is annoying.  The file does not appear 
 %%        to do anything anyway.  The alternative to this is to update
@@ -1446,7 +1447,7 @@ openright,doublespaced,normalmargins,final}
     {\@submitdate}%
     \ifcopyright
       \\ \vspace*{.3in}% one line + 0.3in
-      Copyright \copyright\ {\@copyrightyear} by {\@author}
+      Copyright \copyright\ {\@author} {\@copyrightyear}
     \fi
   \end{center}
 }
