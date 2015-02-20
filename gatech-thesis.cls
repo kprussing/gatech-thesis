@@ -56,7 +56,7 @@
 %%  v1.9: 2015-Feb-20 Keith F. Prussing
 %%      * Update format of copyright line to current standard.
 %%      * Remove loading the `gatech-thesis-patch.sty` file.  This fixes
-%%        an extra warning that is annoying.  The file does not appear 
+%%        an extra warning that is annoying.  The file does not appear
 %%        to do anything anyway.  The alternative to this is to update
 %%        the version number in `gatech-thesis-patch.sty`.
 %%      * Do not force the page style to plain when renewing the chapter
@@ -968,7 +968,7 @@ openright,doublespaced,normalmargins,final}
 %%    \begin{longquotation}    ...\end{longquotation}
 %%    \begin{newspacing}{x.xx} ...\end{newspacing}
 %
-\renewcommand{\linespacing}[1]{%
+\newcommand{\linespacing}[1]{%
   \gdef\@spacing{#1}
   \newlinestretch{#1}\if@draft\else\ifdim #1pt < 1.25pt\typeout
    {Gatech-Thesis Class Warning: line spacing less than 1 1/2}\fi\fi
@@ -977,7 +977,7 @@ openright,doublespaced,normalmargins,final}
 %% \spacing is a clone of \linespacing, retained for backwards
 %% compatibility with GTthesis.sty
 %
-\newcommand{\spacing}[1]{%
+\renewcommand{\spacing}[1]{%
   \gdef\@spacing{#1}
   \newlinestretch{#1}\if@draft\else\ifdim #1pt < 1.25pt\typeout
   {Gatech-Thesis Class Warning: line spacing less than 1 1/2}\fi\fi
