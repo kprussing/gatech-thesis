@@ -63,6 +63,10 @@
 %%        macro because it forces the preliminary pages to have numbers,
 %%        but some are not supposed to have numbers.
 %%      * Remove the dedication and preface from the table of contents.
+%%      * Long table and figure captions are now single spaced per
+%%        Chapter 10 of the April 2014 thesis manual.  The package now
+%%        requires the `caption` and `setspace` packages to be
+%%        installed.
 %%  v1.8: 2010-Jul-02 Mitchel T. Keller
 %%      * Change font used in Table of Contents for volumes (parts).
 %%      * Add support for abstract page meeting UMI requirements.
@@ -915,6 +919,11 @@ openright,doublespaced,normalmargins,final}
 %
 \LoadClass[\@thesisptsz,\@thesisside,\@thesisopen]{report}
 
+%% Apparently, you _must_ load the `report` class before loading the
+%% `caption` package.
+\RequirePackage{caption}
+\RequirePackage{setspace}
+\captionsetup{font={singlespacing,small}, labelfont=bf}
 
 %% From lastpage package. Used to generate abstract.
 %% Lastpage is written by Jeff Goldberg (J.Goldberg@Cranfield.ac.uk)
@@ -952,7 +961,7 @@ openright,doublespaced,normalmargins,final}
 %%    \begin{longquotation}    ...\end{longquotation}
 %%    \begin{newspacing}{x.xx} ...\end{newspacing}
 %
-\newcommand{\linespacing}[1]{%
+\renewcommand{\linespacing}[1]{%
   \gdef\@spacing{#1}
   \newlinestretch{#1}\if@draft\else\ifdim #1pt < 1.25pt\typeout
    {Gatech-Thesis Class Warning: line spacing less than 1 1/2}\fi\fi
@@ -2203,19 +2212,6 @@ openright,doublespaced,normalmargins,final}
         \@parboxrestore
         \@floatboxreset
 }
-
-% Redefine the macro used for caption labels, for a (slightly)
-% fancier format.  Feel free to use the caption2 package instead...
-\long\def\@makecaption#1#2{%
-  \vskip\abovecaptionskip
-  \sbox\@tempboxa{\textbf{#1: }#2}%
-  \ifdim \wd\@tempboxa >\hsize
-    \textsf{\textbf{#1: }}#2\par
-  \else
-    \global \@minipagefalse
-    \hb@xt@\hsize{\hfil\box\@tempboxa\hfil}%
-  \fi
-  \vskip\belowcaptionskip}
 
 % Redefine the macro used for footnotes to use single spacing
 \long\def\@footnotetext#1{%
