@@ -59,6 +59,9 @@
 %%        an extra warning that is annoying.  The file does not appear 
 %%        to do anything anyway.  The alternative to this is to update
 %%        the version number in `gatech-thesis-patch.sty`.
+%%      * Do not force the page style to plain when renewing the chapter
+%%        macro because it forces the preliminary pages to have numbers,
+%%        but some are not supposed to have numbers.
 %%  v1.8: 2010-Jul-02 Mitchel T. Keller
 %%      * Change font used in Table of Contents for volumes (parts).
 %%      * Add support for abstract page meeting UMI requirements.
@@ -2306,8 +2309,6 @@ openright,doublespaced,normalmargins,final}
   \if@openright\cleardoublepage\else\clearpage\fi
   \if@tcpage% DO NOT use the \front@pagestyle macro here.
     {\thispagestyle{tcplain}}
-  \else
-    {\thispagestyle{plain}}%report.cls temporarily resets pagestyle to plain. Do the same.
   \fi 
   \settocdepth{\chapapp@tocdepth}
   \global\@topnum\z@
