@@ -1619,6 +1619,7 @@ openright,doublespaced,normalmargins,final}
 \newenvironment{acknowledgements}{%
   \typeout{***************** Acknowledgements ******************}
   \if@openright\cleardoublepage\else\clearpage\fi 
+  \thispagestyle{plain}
   \phantomsection%
   \addcontentsline{toc}{chapter}%
     {\texorpdfstring{\Makeuppercase{Acknowledgements}}{Acknowledgements}}
